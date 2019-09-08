@@ -1,2 +1,4 @@
 language: java
-script: gradlew packDeb
+install: skip
+script: 
+  - gradlew packDeb
