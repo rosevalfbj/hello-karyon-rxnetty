@@ -3,4 +3,5 @@ install: skip
 jdk:
   - openjdk8
 script: 
-  - ./gradlew packDeb
+  - ./gradlew clean packDeb
+  - gem install deb-s3
