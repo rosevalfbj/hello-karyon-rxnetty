@@ -5,4 +5,4 @@ jdk:
 script: 
   - ./gradlew clean packDeb
   - gem install deb-s3
-  - deb-s3 upload --bucket debian-repo-spinnaker --arch amd64 --codename trusty --preserve-versions true build/distributions/*.deb --s3-region=us-west-2
+  - deb-s3 upload --bucket debian-repo-spinnaker.s3.us-west-2.amazonaws.com --arch amd64 --codename trusty --preserve-versions true build/distributions/*.deb --s3-region=us-west-2
