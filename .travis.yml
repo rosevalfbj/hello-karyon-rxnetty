@@ -3,7 +3,7 @@ install: skip
 jdk:
   - openjdk8
 script: 
-  - ./gradlew clean packDeib
+  - ./gradlew clean packDeb
   - gem install deb-s3
 after_script:
   - deb-s3 upload --bucket debian-repo-spinnaker --access-key-id $ACCESS_KEY_ID --secret-key-id $SECRET_KEY_ID --arch amd64 --codename trusty -preserve-versions true build/distributions/*.deb --s3-region=us-west-2
