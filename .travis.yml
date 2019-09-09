@@ -7,4 +7,3 @@ script:
   - gem install deb-s3
 after_script:
   - deb-s3 upload --bucket spin-repo --access-key-id $AWS_ACCESS_KEY_ID --secret-access-key $AWS_SECRET_ACCESS_KEY --arch amd64 --codename trusty --preserve-versions true build/distributions/*.deb --s3-region=us-west-2
-
