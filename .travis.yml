@@ -6,7 +6,7 @@ script:
   - ./gradlew clean packDeb
   - gem install travis-artifacts
 after_script:
-  - addons:
-      artifacts:
-        s3_region: "us-west-2"
-        path: build/distributions/*.deb 
+addons:
+  artifacts:
+    s3_region: "us-west-2"
+    path: build/distributions/*.deb 
