@@ -7,4 +7,3 @@ script:
   - gem install travis-artifacts
 after_script:
   - travis-artifacts upload --path build/distributions/*.deb
-
