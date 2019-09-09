@@ -4,6 +4,6 @@ jdk:
   - openjdk8
 script: 
   - ./gradlew clean packDeb
-  - gem install deb-s3
+  - gem install travis-artifacts
 after_script:
-  - deb-s3 upload --bucket debian-repo-spinnaker --access-key-id $AWS_ACCESS_KEY_ID --secret-access-key $AWS_SECRET_ACCESS_KEY --arch amd64 --codename trusty --preserve-versions true build/distributions/*.deb --s3-region=us-west-2
+  - travis-artifacts upload --path build/distributions/*.deb --key $AWS_ACCESS_KEY_ID --secret $AWS_SECRET_ACCESS_KEY --bucket debian-repo-spinnaker
