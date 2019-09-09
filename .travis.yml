@@ -4,9 +4,6 @@ jdk:
   - openjdk8
 script: 
   - ./gradlew clean packDeb
-  - gem install travis-artifacts
 after_script:
-addons:
-  artifacts:
-    s3_region: "us-west-2"
-    path: build/distributions/*.deb 
+  - "curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash"
+  - artifacts upload
