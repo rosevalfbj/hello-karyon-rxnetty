@@ -6,7 +6,8 @@ before_script:
   - "gem install travis-artifacts"
 script: 
   - "./gradlew clean packDeb"
-after_success: # and this only on success
-  - "travis-artifacts upload --path build/distributions/*.deb"
-
-
+after_script:
+addons:
+  artifacts: true
+  paths:
+    - $HOME/build/distributions/*.deb
